@@ -1,0 +1,27 @@
+--------字幕を動画ファイルにつける方法---------
+コマンド：
+ffmpeg -i videos/okukku.mp4 \
+-vf "subtitles=subtitles/okukku.srt:force_style='FontName=NotoSansCJKjp-Regular,FontSize=36,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=2,Alignment=2'" \
+-c:a copy videos/okukku_styled.mp4
+
+	•	FontName
+使用するフォント名（例：NotoSansCJKjp-Regular, Hiragino Maru Gothic Pro）
+	•	FontSize
+フォントの大きさ（例：24, 36, 48 ピクセル）
+	•	PrimaryColour
+字幕の文字色（16進カラーコード / BGR順）
+例：&H00FFFFFF → 白、&H0000FF00 → 緑、&H00FF0000 → 青
+	•	OutlineColour
+文字の枠線の色（16進カラーコード）
+例：&H00000000 → 黒
+	•	BorderStyle
+字幕の表示スタイル：
+	•	1 = 縁取り（おすすめ）
+	•	3 = ボックス背景付き字幕（プレゼン風）
+	•	Outline
+枠線の太さ（例：2くらいが見やすくておすすめ）
+	•	Alignment
+字幕の位置を決める（数字で表現）：
+	•	2 = 下中央（よく使う位置）
+	•	8 = 上中央（被写体の邪魔を避けたいとき）
+	•	6 = 下右、1 = 左下 なども指定可能

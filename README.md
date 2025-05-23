@@ -1,0 +1,2 @@
+# whisper_subtitle_tool
+Whisperによる音声文字起こし＋字幕生成ツール
